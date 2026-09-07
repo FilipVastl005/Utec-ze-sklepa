@@ -4,6 +4,13 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args){
 
+        System.out.println("Welcome to the game");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         Start();
     }
 
@@ -21,22 +28,22 @@ public class Main {
         for (int i = 0; i < 50; i++) System.out.println();
 
         System.out.println("Vyber si obtížnost");
-        System.out.println("1 - Jednoduchá");
-        System.out.println("2 - Normální");
-        System.out.println("3 - Složitá");
+        System.out.println("1 - Zamknuto - (Jednoduchá)");
+        System.out.println("2 - Zával -(Normální)");
+        System.out.println("3 - Potopa - (Složitá)");
         int UserDiff = UserIn.nextInt();
 
         switch (UserDiff){
             case 1:
-                System.out.println("Dobrá volba srabe");
+                System.out.println("Zavolej");
                 Game1();
                 break;
             case 2:
-                System.out.println("Asi ok");
+                System.out.println("BUM");
                 Game2();
                 break;
             case 3:
-                System.out.println("Egoisto");
+                System.out.println("Neklesni na dno");
                 Game3();
                 break;
             default:
@@ -92,7 +99,24 @@ public class Main {
     }
 
     static void Game1(){
+        for (int i = 0; i < 50; i++) System.out.println();
         System.out.println("Game1");
+        System.out.println("Zamknuto");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        for (int i = 0; i < 50; i++) System.out.println();
+
+        System.out.println("Jsi v ůnikové místnosti, tvůj cíl je dostat se ven.");
+        System.out.println("Místnost 1");
+        System.out.println("Po tvé levici jsou zamklé dveře s čtvercovou klíčovou dirkou, najdeš klíč?" +
+                "Před tebou je kostlivec, v pravo skříň a nad tebou poklop.");
+        System.out.println("1 - odlámeš kostlivci žebra");
+        System.out.println("2 - otevřeš skříň");
+        System.out.println("3 - pokusíš se otevřít poklop");
+
 
     }
 
