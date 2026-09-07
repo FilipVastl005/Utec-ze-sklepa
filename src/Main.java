@@ -99,9 +99,12 @@ public class Main {
     }
 
     static void Game1(){
+
+
         for (int i = 0; i < 50; i++) System.out.println();
         System.out.println("Game1");
         System.out.println("Zamknuto");
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -113,10 +116,46 @@ public class Main {
         System.out.println("Místnost 1");
         System.out.println("Po tvé levici jsou zamklé dveře s čtvercovou klíčovou dirkou, najdeš klíč?" +
                 "Před tebou je kostlivec, v pravo skříň a nad tebou poklop.");
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        for (int i = 0; i < 50; i++) System.out.println();
+
+        System.out.println("Co uděláš?");
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        for (int i = 0; i < 50; i++) System.out.println();
+
         System.out.println("1 - odlámeš kostlivci žebra");
         System.out.println("2 - otevřeš skříň");
         System.out.println("3 - pokusíš se otevřít poklop");
 
+        Scanner ChoiseGame1 = new Scanner(System.in);
+        int UserChGm1 = ChoiseGame1.nextInt();
+
+        switch (UserChGm1){
+            case 1:
+                System.out.println("Gratuluju ty vocasi, zničil si to.");
+                YouLoose();
+                break;
+            case 2:
+                System.out.println("Nalezen byl klíč");
+                KeyFound();
+                break;
+            case 3:
+                System.out.println("Nová místnost");
+                HatchFound();
+                break;
+            default:
+                Idiot();
+        }
 
     }
 
@@ -128,5 +167,9 @@ public class Main {
     static void Game3(){
         System.out.println("Game1");
 
+    }
+
+    static void YouLoose(){
+        System.out.println("Prohrál jsi.");
     }
 }
