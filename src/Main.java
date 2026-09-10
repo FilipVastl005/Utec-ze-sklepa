@@ -147,11 +147,13 @@ public class Main {
                 break;
             case 2:
                 System.out.println("Nalezen byl klíč");
-                KeyFound();
+                G1KeyFound();
+
                 break;
             case 3:
-                System.out.println("Nová místnost");
-                HatchFound();
+                System.out.println("Byla Nalezena nová místnost");
+                G1Hatch();
+
                 break;
             default:
                 Idiot();
@@ -169,7 +171,35 @@ public class Main {
 
     }
 
+    static void G1Hatch(){
+        System.out.println("Jsi v nechutně osvětlené místnosti.");
+        System.out.println("Zkus neoslepnout a najít cestu ven");
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        System.out.println("Co uděláš?");
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        for (int i = 0; i < 50; i++) System.out.println();
+
+        System.out.println("1 - Prohmatáš póstrování");
+        System.out.println("2 - Prozkoumáš světla");
+        System.out.println("3 - Porozhlédneš se");
+
+        Scanner ChoiseHatchGame1 = new Scanner(System.in);
+        int UserHatchGm1 = ChoiseHatchGame1.nextInt();
+
+    }
+
     static void YouLoose(){
         System.out.println("Prohrál jsi.");
     }
+    static void G1KeyFound(){System.out.println("Našel si klíč ale je ti k ničemu. Gratuluju."); YouLoose();}
 }
